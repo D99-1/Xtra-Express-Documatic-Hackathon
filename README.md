@@ -1,38 +1,139 @@
-<p align="center"><img src="https://github.com/D99-1/D99-1/blob/main/My%20project-1%20(1).png" width="200" /></p>
+<a name="readme-top"></a>
+<br />
+<div align="center">
+  <a href="https://github.com/D99-1/Xtra-Express-Documatic-Hackathon">
+    <img src="https://raw.githubusercontent.com/D99-1/Xtra-Express-Documatic-Hackathon/main/Xtra-express%20LOGO.png" alt="Logo" width="240" height="80">
+  </a>
+
+  <h3 align="center">Xtra-Express</h3>
 <p align="center">
- 
----
- 
-### :technologist: &nbsp;About Me :
+   <h4>A NPM Utility Package For Express</h4>
+   <h4>Created For The Documatic Hackathon</h4>
+    <br />
+    <a href="https://github.com/d99-1/xtra-express-documatic-hackathon"><strong>Repository»</strong></a>
+    <br />
+    <br />
+    <a href="https://expressjs.com/">Express</a>
+    ·
+    <a href="https://github.com/d99-1/xtra-express-documatic-hackathon/issues">Report Bug</a>
+    ·
+    <a href="https://www.documatic.com/">Documatic</a>
+  </p>
 
-I am a young developer from Australia.
 
-- 💻 I'm making many small projects and experimenting with different languages
-- ⚡ I also contribute to help others on Github and Stack Overflow
-- 📫 How to reach me: &nbsp; Github or [![Stack Overflow](https://img.shields.io/badge/Stack%20Overflow-orange)](https://stackoverflow.com/users/16370345/dhyan-tanna)
 
----
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url]
 
-### 🛠 &nbsp;Languages:
+</div>
 
-<p>
-<img src="https://github.com/devicons/devicon/blob/master/icons/javascript/javascript-original.svg" title="JavaScript" alt="JavaScript" width="40" height="40"/>&nbsp;
- <img src="https://github.com/devicons/devicon/blob/master/icons/react/react-original-wordmark.svg" title="React" alt="React" width="40" height="40"/>&nbsp;
-<img src="https://github.com/devicons/devicon/blob/master/icons/java/java-original-wordmark.svg" title="Java" alt="Java" width="40" height="40"/>&nbsp;
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/npm/npm-original-wordmark.svg" title="NPM" alt="NPM" width="40" height="40"/>&nbsp;
- <img src="https://github.com/devicons/devicon/blob/master/icons/html5/html5-original.svg" title="HTML5" alt="HTML" width="40" height="40"/>&nbsp;
-<img src="https://github.com/devicons/devicon/blob/master/icons/css3/css3-plain-wordmark.svg"  title="CSS3" alt="CSS" width="40" height="40"/>&nbsp;
-<img src="https://github.com/devicons/devicon/blob/master/icons/nodejs/nodejs-original-wordmark.svg" title="NodeJS" alt="NodeJS" width="40" height="40"/>&nbsp;
-<img src="https://github.com/devicons/devicon/blob/master/icons/discordjs/discordjs-original.svg" title="DiscordJS" alt="DiscordJS" width="40" height="40"/>&nbsp;
-<img src="https://github.com/devicons/devicon/blob/master/icons/firebase/firebase-plain-wordmark.svg" title="Firebase" alt="Firebase" width="40" height="40"/>&nbsp;
-<img src="https://github.com/devicons/devicon/blob/master/icons/python/python-original.svg" title="Python" alt="Python" width="40" height="40"/>&nbsp;
-</p>
+<details>
+  <summary>Table of Contents</summary>
+  
+</details>
 
----
 
-### 🔥 &nbsp; My Stats :
-[![GitHub Streak](http://github-readme-streak-stats.herokuapp.com?user=d99-1&theme=tokyonight&background=000000)](https://github.com/D99-1)
 
-[![Stack Overflow Stats](https://so-stats-kurt-liao.vercel.app/api?user=16370345)](https://stackoverflow.com/users/16370345/dhyan-tanna)
+## About The Project
 
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=d99-1&layout=compact&theme=tokyonight)](https://github.com/D99-1)
+Express is a popular Node.js package useful for many simple tasks that require hosting files online such as a simple website or a api, and Xtra-Express is for the sole purpose of making this package even easier by simplifying tasks that would take hundreds of lines of code if done manually. It will save you time and effort, and will hopefully enhance your website, api or whatever you wish to build.
+
+
+### Prerequisites
+
+NPM is required to run this project
+
+If you do not already have npm you can install it from https://nodejs.org/en/download/ 
+  ```sh
+  npm install -g npm
+  ```
+
+## Installation
+Clone the repository
+```sh 
+ git clone https://github.com/d99-1/xtra-express-documatic-hackathon
+```
+Now link the package for local usage
+```sh
+npm link
+```
+Create another folder outside the repository folder
+```sh 
+ mkdir testing
+```
+```sh
+ cd testing
+```
+```sh 
+npm init -y
+```
+Link the npm package
+```sh
+npm link xtra-express
+```
+
+
+## Usage
+
+```js
+const {express} = require('xtra-express')  // Import xtra-express
+const app = express();                     // create app
+
+app.set('view engine','ejs')               // Set ejs to view engine
+app.use(express.static('xtra-express'))    // This is necessary if you want the views chart page
+
+express.init(['index-ejs'])                // Initializes all your files
+                                           // Make sure to replace `.` with `-` in all file names you provide to the package
+                                           
+app.get('/', async (req, res) => {          
+    express.viewsUpdate('index-ejs')       // Tells the package that a new view has occured
+    res.render('index');                   // Render your content inside the `views` folder as normal
+ });
+
+ app.get('/views', async (req,res) => {
+    res.render('xtra-express/index-ejs')   // Render the views chart for the specified file on that path
+ })
+
+ app.listen(5001);
+```
+
+## Functions
+
+
+
+
+
+## Contributing
+Contributing will help keep this project alive and is greatly appreaciated. If you would like to contribute please follow the steps below.
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+
+
+
+## License
+
+Distributed under the MIT License. See <a href="https://github.com/D99-1/Xtra-Express-Documatic-Hackathon/blob/main/LICENSE.md">`LICENSE.md`</a> for more information.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+[contributors-shield]: https://img.shields.io/github/contributors/D99-1/Xtra-Express-Documatic-Hackathon.svg?style=for-the-badge
+[contributors-url]: https://github.com/D99-1/Xtra-Express-Documatic-Hackathon/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/D99-1/Xtra-Express-Documatic-Hackathon.svg?style=for-the-badge
+[forks-url]: https://github.com/D99-1/Xtra-Express-Documatic-Hackathon/network/members
+[stars-shield]: https://img.shields.io/github/stars/D99-1/Xtra-Express-Documatic-Hackathon.svg?style=for-the-badge
+[stars-url]: https://github.com/D99-1/Xtra-Express-Documatic-Hackathon/stargazers
+[issues-shield]: https://img.shields.io/github/issues/D99-1/Xtra-Express-Documatic-Hackathon.svg?style=for-the-badge
+[issues-url]: https://github.com/D99-1/Xtra-Express-Documatic-Hackathon/issues
+[license-shield]: https://img.shields.io/github/license/D99-1/Xtra-Express-Documatic-Hackathon.svg?style=for-the-badge
+[license-url]: https://github.com/D99-1/Xtra-Express-Documatic-Hackathon/blob/main/LICENSE.md
+
