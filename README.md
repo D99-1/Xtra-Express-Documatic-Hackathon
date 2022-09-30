@@ -30,13 +30,6 @@
 
 </div>
 
-<details>
-  <summary>Table of Contents</summary>
-  
-</details>
-
-
-
 ## About The Project
 
 Express is a popular Node.js package useful for many simple tasks that require hosting files online such as a simple website or a api, and Xtra-Express is for the sole purpose of making this package even easier by simplifying tasks that would take hundreds of lines of code if done manually. It will save you time and effort, and will hopefully enhance your website, api or whatever you wish to build.
@@ -112,8 +105,9 @@ app.set('view engine','ejs')                                            // Set e
 app.use(express.static('xtra-express'))                                 // This is necessary if you want the views chart page
 
 express.init(['index-ejs'])                                             // Initializes all your files
+
                                                                         // Make sure to replace `.` with `-` in all 
-                                                                           file names you provide to the package
+                                                                        // file names you provide to the package
                                            
 app.get('/', async (req, res) => {          
     express.viewsUpdate('index-ejs')                                    // Tells the package that a new view has occured
@@ -128,6 +122,32 @@ app.get('/', async (req, res) => {
 ```
 
 ## Functions
+```js
+express.init(['file-name']) 
+```
+Initializes all files given in the array for view tracking and the views chart. Processes can also be done individually through the functions below.
+```js
+express.viewsInit('file-name')
+```
+Initializes the view tracking and creates all necessary files
+```js
+express.chartInit('file-name')
+```
+Initalizes the views chart and creates all necessary files. This will create a file at `./views/xtra-express/file-name.ejs`, edit this file as per the needs of your site. The chart can be displayed on any route by using `res.render('xtra-express/file-name')`.
+```js
+express.viewsUpdate('file-name')
+```
+Should be placed on the route where you would like to track views. It will be called on every visit, updating the view count each time.
+> :warning: **If you are using nodemon**: Nodemon will restart your site on every visit due to the changing of a `.json` file. To avoid this place the following code in your `package.json`
+> ```js
+>  "nodemonConfig": {
+>   "ignore": ["xtra-express/*/*.json"]
+>  },
+> ```
+```js
+express.views('file-name')
+```
+Run at any time to get the current number of views printed in the console. This can also be stored in a variable where it will simply return the number of views 
 
 
 
