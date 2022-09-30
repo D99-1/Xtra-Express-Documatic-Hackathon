@@ -55,6 +55,7 @@ Windows:
 ```sh
  git clone https://github.com/d99-1/xtra-express-documatic-hackathon && cd xtra-express-documatic-hackathon && npm install && cd .. && mkdir myProject && cd myProject && npm init -y && type NUL >> index.js
  ```
+If you already have an existing project use the steps below as per your needs
 Clone the repository
 ```sh 
  git clone https://github.com/d99-1/xtra-express-documatic-hackathon
