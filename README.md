@@ -52,49 +52,76 @@ If you do not already have npm you can install it from https://nodejs.org/en/dow
   ```
 
 ## Installation
+Simply use
+
+Mac/Linux:
+```sh
+git clone https://github.com/d99-1/xtra-express-documatic-hackathon && cd xtra-express-documatic-hackathon && npm install && cd .. && mkdir myProject && cd myProject && npm init -y && touch index.js 
+```
+Windows:
+```sh
+ git clone https://github.com/d99-1/xtra-express-documatic-hackathon && cd xtra-express-documatic-hackathon && npm install && cd .. && mkdir myProject && cd myProject && npm init -y && type NUL >> index.js
+ ```
 Clone the repository
 ```sh 
  git clone https://github.com/d99-1/xtra-express-documatic-hackathon
 ```
-Now link the package for local usage
+Go inside the newly downloaded folder
 ```sh
-npm link
+cd xtra-express-documatic-hackathon
 ```
-Create another folder outside the repository folder
+Install required dependencies
+```sh
+npm install
+```
+Go back into the main folder
 ```sh 
- mkdir testing
+cd ..
 ```
+Create another folder for your code
+```sh 
+ mkdir myProject
+```
+Enter your new folder
 ```sh
- cd testing
+ cd myProject
 ```
+Initalize the project
 ```sh 
 npm init -y
 ```
-Link the npm package
+Create an index.js
+
+Mac/Linux:
 ```sh
-npm link xtra-express
+touch index.js 
+```
+Windows:
+```sh
+type NUL >> index.js
 ```
 
 
 ## Usage
 
 ```js
-const {express} = require('xtra-express')  // Import xtra-express
-const app = express();                     // create app
+const {express} = require('../xtra-express-documatic-hackathon/index')  // Import xtra-express's index.js from the dowloaded files
+const app = express();                                                  // create app
 
-app.set('view engine','ejs')               // Set ejs to view engine
-app.use(express.static('xtra-express'))    // This is necessary if you want the views chart page
+app.set('view engine','ejs')                                            // Set ejs to view engine
+app.use(express.static('xtra-express'))                                 // This is necessary if you want the views chart page
 
-express.init(['index-ejs'])                // Initializes all your files
-                                           // Make sure to replace `.` with `-` in all file names you provide to the package
+express.init(['index-ejs'])                                             // Initializes all your files
+                                                                        // Make sure to replace `.` with `-` in all 
+                                                                           file names you provide to the package
                                            
 app.get('/', async (req, res) => {          
-    express.viewsUpdate('index-ejs')       // Tells the package that a new view has occured
-    res.render('index');                   // Render your content inside the `views` folder as normal
+    express.viewsUpdate('index-ejs')                                    // Tells the package that a new view has occured
+    res.render('index');                                                // Render your content inside the `views` folder as normal
  });
 
  app.get('/views', async (req,res) => {
-    res.render('xtra-express/index-ejs')   // Render the views chart for the specified file on that path
+    res.render('xtra-express/index-ejs')                                // Render the views chart for the specified file on that path
  })
 
  app.listen(5001);
