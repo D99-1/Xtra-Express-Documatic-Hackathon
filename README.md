@@ -45,7 +45,7 @@ If you do not already have npm you can install it from https://nodejs.org/en/dow
   ```
 
 ## Installation
-Simply use
+### Single Step Project Setup
 
 Mac/Linux:
 ```sh
@@ -55,8 +55,13 @@ Windows:
 ```sh
  git clone https://github.com/d99-1/xtra-express-documatic-hackathon && cd xtra-express-documatic-hackathon && npm install && cd .. && mkdir myProject && cd myProject && npm init -y && type NUL >> index.js
  ```
-If you already have an existing project use the steps below as per your needs
+### Existing Project Setup
+> Begin running these commands from inside your project folder
 
+Go inside the main folder
+```sh
+cd ..
+```
 Clone the repository
 ```sh 
  git clone https://github.com/d99-1/xtra-express-documatic-hackathon
@@ -73,29 +78,6 @@ Go back into the main folder
 ```sh 
 cd ..
 ```
-Create another folder for your code
-```sh 
- mkdir myProject
-```
-Enter your new folder
-```sh
- cd myProject
-```
-Initalize the project
-```sh 
-npm init -y
-```
-Create an index.js
-
-Mac/Linux:
-```sh
-touch index.js 
-```
-Windows:
-```sh
-type NUL >> index.js
-```
-
 
 ## Usage
 
