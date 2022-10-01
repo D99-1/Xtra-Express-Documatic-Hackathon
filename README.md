@@ -132,6 +132,10 @@ Should be placed on the route where you would like to track views. It will be ca
 express.views('file-name')
 ```
 Run at any time to get the current number of views printed in the console. This can also be stored in a variable where it will simply return the number of views 
+```js
+express.serverUptime()
+```
+Returns the server uptime in the format `days:hours:minutes:seconds`. Recommended to put this in either a `console.log()` or variable.
 
 
 
