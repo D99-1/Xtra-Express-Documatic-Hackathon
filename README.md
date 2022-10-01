@@ -104,6 +104,7 @@ app.get('/', async (req, res) => {
 
  app.listen(5001);
 ```
+> Not all functions have been utilised in the simple demo above and futher functions can be seen in the section below
 
 ## Functions
 ```js
@@ -118,6 +119,7 @@ Initializes the view tracking and creates all necessary files
 express.chartInit('file-name')
 ```
 Initalizes the views chart and creates all necessary files. This will create a file at `./views/xtra-express/file-name.ejs`, edit this file as per the needs of your site. The chart can be displayed on any route by using `res.render('xtra-express/file-name')`.
+> To make sure no content gets cut out, only the last 30 days of recorded data will be shown in the chart
 ```js
 express.viewsUpdate('file-name')
 ```
