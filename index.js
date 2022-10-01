@@ -1,9 +1,10 @@
 const express = require('express');
 const app = express()
 let fs = require('fs')
-
+let uptime = 0
 
 express.viewsInit =  function(fileName){
+  uptime = Date.now()
     fs.mkdir('./xtra-express', (error) => {
         if(error){
         //  console.log('./xtra-express exists')
@@ -29,7 +30,7 @@ express.viewsInit =  function(fileName){
      let output = JSON.stringify(data)
      try{
       fs.writeFileSync(`./xtra-express/${fileName}/views.json`, output, { flag: 'wx' }, function (err) {
-        if (err) console.log(`./xtra-express/${fileName}/views.json exists`);
+        if (err) {}//console.log(`./xtra-express/${fileName}/views.json exists`);
         else console.log(`./xtra-express/${fileName}/views.json created`);
     });
 } catch{
@@ -71,15 +72,17 @@ express.views = function(fileName){
         const data = JSON.parse(jsonString)
         x = data.count.views
         console.log("Current Views => ",x)
+        return x
 
     } catch (err){
-        console.log(err)
         console.log("Current Views => Error => Double check the information you have provided to make sure it is correct")
     }
 }
  
 
 express.chartInit = function(fileName){
+  uptime = Date.now()
+
     try{
         const jsonString = fs.readFileSync(`./xtra-express/${fileName}/views.json`, 'utf-8')
         const data = JSON.parse(jsonString)
@@ -107,22 +110,47 @@ express.chartInit = function(fileName){
              <meta http-equiv="X-UA-Compatible" content="IE=edge">
              <meta name="viewport" content="width=device-width, initial-scale=1.0">
              <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
+             <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
              <title>${fileName} Views</title>
          </head>
          <body>
-             <img id="image"/>
+         <style>
+          #chart_div{
+            height: 1000px
+          }
+         </style>
+          <div id="chart_div"></div>
              <script>
+                let fullKeys
+                let fullVals
                 let keys
                 let vals
+
+
+
                  $.getJSON('${jsonLocation}', function(data) {
                      console.log(data)
-                      keys = Object.keys(data.time) // => ['a','b','c']
-                      vals = Object.values(data.time) // => [1,2,3]
+                      fullKeys = Object.keys(data.time) // => ['a','b','c']
+                      fullVals = Object.values(data.time) // => [1,2,3]
+                      keys = fullKeys.slice(-30)
+                      vals = fullVals.slice(-30)
                         console.log(keys.toString())
                         const keysWrappedInQuotes = keys.map(key => "'"+key+"'");
                         const finalKeys = keysWrappedInQuotes.join(',')
-                        link = "https://quickchart.io/chart?bkg=white&c={type:'line',data:{labels:["+finalKeys+"],datasets:[{label:'Views%20Over%20Time',data:["+vals+"]}]}}"
-                        document.getElementById("image").src = link;
+                        google.charts.load('current', {packages: ['corechart', 'line']});
+                        google.charts.setOnLoadCallback(drawBasic);
+                        function drawBasic() {
+                        
+                          var data = new google.visualization.DataTable();
+                          data.addColumn('string', 'Date');
+                          data.addColumn('number', 'Views');
+                        
+                          for(i = 0; i < keys.length; i++)
+                            data.addRow([keys[i], vals[i]]);
+                        
+                          new google.visualization.LineChart(document.getElementById('chart_div')).
+                            draw(data, {legend:"none"});
+                        }
                       
                  })
              </script>
@@ -136,11 +164,31 @@ express.chartInit = function(fileName){
 
     } catch (err){
        // console.log(err)
-        console.log(`Current Views => Error => If you did not previously have a ${fileName}.ejs file then this may be a initialization error => It should work corrently when you next run the code`)
+        console.log(`Current Views => Error => If you did not previously have a ${fileName}.ejs file or you made changes in views.jons then this may be a initialization error => It should work corrently when you next run the code`)
     }
 } 
+express.serverUptime = function(){
+nowTime = Date.now()
+finalTime = nowTime - uptime
+function padTo2Digits(num) {
+  return num.toString().padStart(2, '0');
+}
 
+  let seconds = Math.floor(finalTime / 1000);
+  let minutes = Math.floor(seconds / 60);
+  let hours = Math.floor(minutes / 60);
+  let days = Math.floor(hours /24);
+
+  seconds = seconds % 60;
+  minutes = minutes % 60;
+  hours = hours % 24;
+
+
+
+console.log(`${padTo2Digits(days)}:${padTo2Digits(hours)}:${padTo2Digits(minutes)}:${padTo2Digits(seconds)}`)
+}
 express.init = function(files = []) {
+  uptime = Date.now()
   for(var i = 0; i < files.length;i++){
     express.viewsInit(files[i])
     express.chartInit(files[i])
