@@ -185,7 +185,7 @@ function padTo2Digits(num) {
 
 
 
-console.log(`${padTo2Digits(days)}:${padTo2Digits(hours)}:${padTo2Digits(minutes)}:${padTo2Digits(seconds)}`)
+return `${padTo2Digits(days)}:${padTo2Digits(hours)}:${padTo2Digits(minutes)}:${padTo2Digits(seconds)}`
 }
 express.init = function(files = []) {
   uptime = Date.now()
