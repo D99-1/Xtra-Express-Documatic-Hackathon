@@ -3,6 +3,8 @@ const app = express()
 let fs = require('fs')
 let uptime = 0
 
+
+// Create views.json file
 express.viewsInit =  function(fileName){
   uptime = Date.now()
     fs.mkdir('./xtra-express', (error) => {
@@ -38,6 +40,7 @@ express.viewsInit =  function(fileName){
 }
 }
 
+// Updates the view count in views.json
 express.viewsUpdate = function(fileName){
     try{
         const timeElapsed = Date.now();
@@ -65,6 +68,7 @@ express.viewsUpdate = function(fileName){
     } 
 }
 
+// Load and displays views from the views.json file
 express.views = function(fileName){
     try{
         const jsonString = fs.readFileSync(`./xtra-express/${fileName}/views.json`, 'utf-8')
@@ -80,6 +84,7 @@ express.views = function(fileName){
 }
  
 
+// Creates a new ejs file for the chart
 express.chartInit = function(fileName){
   uptime = Date.now()
 
@@ -167,6 +172,7 @@ express.chartInit = function(fileName){
         console.log(`Current Views => Error => If you did not previously have a ${fileName}.ejs file or you made changes in views.jons then this may be a initialization error => It should work corrently when you next run the code`)
     }
 } 
+// Gets the server uptime in DD:HH:MM:SS
 express.serverUptime = function(){
 nowTime = Date.now()
 finalTime = nowTime - uptime
@@ -187,6 +193,7 @@ function padTo2Digits(num) {
 
 return `${padTo2Digits(days)}:${padTo2Digits(hours)}:${padTo2Digits(minutes)}:${padTo2Digits(seconds)}`
 }
+// Initializes the view tracking and chart file for all provided filenames
 express.init = function(files = []) {
   uptime = Date.now()
   for(var i = 0; i < files.length;i++){
