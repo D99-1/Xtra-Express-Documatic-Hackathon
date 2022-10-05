@@ -2,7 +2,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/D99-1/Xtra-Express-Documatic-Hackathon">
-    <img src="https://raw.githubusercontent.com/D99-1/Xtra-Express-Documatic-Hackathon/main/Xtra-express%20LOGO.png" alt="Logo" width="240" height="80">
+    <img src="/images/Xtra-express-logo.png" alt="Logo" width="240" height="80">
   </a>
 
   <h3 align="center">Xtra-Express</h3>
