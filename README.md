@@ -139,8 +139,15 @@ express.serverUptime()
 ```
 Returns the server uptime in the format `days:hours:minutes:seconds`. Recommended to put this in either a `console.log()` or variable.
 
+## Demonstration
+  <a href="https://github.com/D99-1/Xtra-Express-Documatic-Hackathon">
+    <img src="/images/chartIMG.png" >
+  </a>
+Above is a example of what a chart page would look like. It is an interactive file and the exact value of the date can be viewed by hovering over the point. The chart also acts effeciently by only displaying every second date on the bottom to ensure no text gets cut out, however if needed, the exact date can be seen by hovering over a point.
 
+###
 
+> 📊 This feature is made possible by the <a href="https://developers.google.com/chart">Google Charts Api</a> 
 
 
 ## Contributing
