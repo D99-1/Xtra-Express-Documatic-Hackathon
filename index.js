@@ -9,7 +9,7 @@ express.viewsInit =  function(fileName){
   uptime = Date.now()
     fs.mkdir('./xtra-express', (error) => {
         if(error){
-        //  console.log('./xtra-express exists')
+        // `./xtra-express` exists
         } else {
           console.log('./xtra-express created')
         }
@@ -17,7 +17,7 @@ express.viewsInit =  function(fileName){
       
       fs.mkdir('./xtra-express/'+fileName, (error) => {
         if(error){
-         // console.log(`./xtra-express/${fileName} exists`)
+         // `./xtra-express/${fileName}` exists
         } else {
           console.log(`./xtra-express/${fileName} created`)
         }
@@ -32,7 +32,7 @@ express.viewsInit =  function(fileName){
      let output = JSON.stringify(data)
      try{
       fs.writeFileSync(`./xtra-express/${fileName}/views.json`, output, { flag: 'wx' }, function (err) {
-        if (err) {}//console.log(`./xtra-express/${fileName}/views.json exists`);
+        if (err) {}//`./xtra-express/${fileName}/views.json` exists
         else console.log(`./xtra-express/${fileName}/views.json created`);
     });
 } catch{
@@ -62,7 +62,6 @@ express.viewsUpdate = function(fileName){
         fs.writeFileSync(`./xtra-express/${fileName}/views.json`,output,err =>{
         })
     } catch (err){
-        //console.log(err)
         console.log("initialization Complete => Visits from this point onwards will be counted")
     } 
 }
@@ -71,7 +70,6 @@ express.viewsUpdate = function(fileName){
 express.views = function(fileName){
     try{
         const jsonString = fs.readFileSync(`./xtra-express/${fileName}/views.json`, 'utf-8')
-       // console.log("JSON:"+jsonString)
         const data = JSON.parse(jsonString)
         x = data.count.views
         console.log("Current Views => ",x)
@@ -93,14 +91,14 @@ express.chartInit = function(fileName){
 
         fs.mkdir('./views', (error) => {
             if(error){
-              //console.log('./views exists')
+            // './views' exists
             } else {
               console.log('./views created')
             }
           })
         fs.mkdir('./views/xtra-express', (error) => {
             if(error){
-             // console.log(`./views/xtra-express exists`)
+             // `./views/xtra-express` exists
             } else {
               console.log(`./views/xtra-express created`)
             }
