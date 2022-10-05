@@ -36,7 +36,6 @@ express.viewsInit =  function(fileName){
         else console.log(`./xtra-express/${fileName}/views.json created`);
     });
 } catch{
-    console.log('')
 }
 }
 
