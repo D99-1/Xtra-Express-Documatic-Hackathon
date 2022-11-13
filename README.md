@@ -168,7 +168,17 @@ Distributed under the MIT License. See <a href="https://github.com/D99-1/Xtra-Ex
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+## Documatic 
+Hey <@&1022200013692096532>, y'all are requested to add the following contents in the readme file and publish your project on npm. Winners would be announced soon after this.
+```Documatic is a search engine for your codebase; Ask documatic a question and find relevant code snippets and insights in seconds.
 
+https://www.documatic.com/
+Documatic acts as a search engine for your codebase; once you describe what you're looking for, Documatic pulls up related code or documentation making it easier to find what you're looking for in seconds!
+
+Not sitting next to each other? No problem. Ask Documatic questions of your codebase to learn and understand your code in seconds. Documatic is the team member you wish you had
+
+Our Visual studio Code extension: https://marketplace.visualstudio.com/items?itemName=Documatic.documatic
+https://cdn.discordapp.com/attachments/926110059782615071/1037404343470661713/Documatic_sh6hrz.gif```
 
 [contributors-shield]: https://img.shields.io/github/contributors/D99-1/Xtra-Express-Documatic-Hackathon.svg?style=for-the-badge
 [contributors-url]: https://github.com/D99-1/Xtra-Express-Documatic-Hackathon/graphs/contributors
