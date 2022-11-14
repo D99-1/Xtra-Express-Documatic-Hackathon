@@ -45,44 +45,14 @@ If you do not already have npm you can install it from https://nodejs.org/en/dow
   ```
 
 ## Installation
-### Single Step Project Setup
-
-Mac/Linux:
 ```sh
-git clone https://github.com/d99-1/xtra-express-documatic-hackathon && cd xtra-express-documatic-hackathon && npm install && cd .. && mkdir myProject && cd myProject && npm init -y && touch index.js 
-```
-Windows:
-```sh
- git clone https://github.com/d99-1/xtra-express-documatic-hackathon && cd xtra-express-documatic-hackathon && npm install && cd .. && mkdir myProject && cd myProject && npm init -y && type NUL >> index.js
- ```
-### Existing Project Setup
-> Begin running these commands from inside your project folder
-
-Go inside the main folder
-```sh
-cd ..
-```
-Clone the repository
-```sh 
- git clone https://github.com/d99-1/xtra-express-documatic-hackathon
-```
-Go inside the newly downloaded folder
-```sh
-cd xtra-express-documatic-hackathon
-```
-Install required dependencies
-```sh
-npm install
-```
-Go back into the main folder
-```sh 
-cd ..
+npm install xtra-express
 ```
 
 ## Usage
 
 ```js
-const {express} = require('../xtra-express-documatic-hackathon/index')  // Import xtra-express's index.js from the dowloaded files
+const {express} = require('xtra-express')  // Import xtra-express's index.js from the dowloaded files
 const app = express();                                                  // create app
 
 app.set('view engine','ejs')                                            // Set ejs to view engine
@@ -177,7 +147,7 @@ Documatic acts as a search engine for your codebase; once you describe what you'
 Not sitting next to each other? No problem. Ask Documatic questions of your codebase to learn and understand your code in seconds. Documatic is the team member you wish you had
 
 Our Visual studio Code extension: https://marketplace.visualstudio.com/items?itemName=Documatic.documatic
-https://cdn.discordapp.com/attachments/926110059782615071/1037404343470661713/Documatic_sh6hrz.gif
+<img src="https://cdn.discordapp.com/attachments/926110059782615071/1037404343470661713/Documatic_sh6hrz.gif"/>
 
 
 
