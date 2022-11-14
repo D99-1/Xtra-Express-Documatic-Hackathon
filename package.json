@@ -1,10 +1,10 @@
 {
   "name": "xtra-express",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Express But Better",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node ."
   },
   "repository": {
     "type": "git",
