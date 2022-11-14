@@ -52,7 +52,7 @@ npm install xtra-express
 ## Usage
 
 ```js
-const {express} = require('xtra-express')  // Import xtra-express's index.js from the dowloaded files
+const {express} = require('xtra-express')                               // Import xtra-express
 const app = express();                                                  // create app
 
 app.set('view engine','ejs')                                            // Set ejs to view engine
