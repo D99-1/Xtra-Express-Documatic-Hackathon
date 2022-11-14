@@ -23,7 +23,7 @@
     "url": "https://github.com/D99-1/Documatic-Hackathon/issues"
   },
   "homepage": "https://github.com/D99-1/Documatic-Hackathon#readme",
-  "dependencies": {
+  "peerDependencies": {
     "ejs": "^3.1.8",
     "express": "^4.18.1"
   }
