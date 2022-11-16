@@ -46,7 +46,7 @@ If you do not already have npm you can install it from https://nodejs.org/en/dow
 
 ## Installation
 ```sh
-npm install xtra-express
+npm install -g xtra-express
 ```
 
 ## Usage
