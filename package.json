@@ -1,6 +1,6 @@
 {
   "name": "xtra-express",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "Express But Better",
   "main": "index.js",
   "scripts": {
@@ -20,9 +20,9 @@
   "author": "D99-1",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/D99-1/Documatic-Hackathon/issues"
+    "url": "https://github.com/D99-1/xtra-express-Documatic-Hackathon/issues"
   },
-  "homepage": "https://github.com/D99-1/Documatic-Hackathon#readme",
+  "homepage": "https://github.com/D99-1/xtra-express-Documatic-Hackathon#readme",
   "peerDependencies": {
     "ejs": "^3.1.8",
     "express": "^4.18.1"
